@@ -1,0 +1,9 @@
+@font-face {
+	font-family: "Standard";
+	src: url("assets/fonts/KospixDemoItalic.otf") format("opentype");
+	font-display: swap;
+}
+
+body {
+	font-family: "Standard", sans-serif;
+}
