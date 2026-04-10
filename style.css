@@ -1,9 +1,20 @@
 @font-face {
 	font-family: "Standard";
-	src: url("assets/fonts/KospixDemoItalic.otf") format("opentype");
+	src: url("assets/fonts/PixelPurl.ttf") format("truetype");
 	font-display: swap;
 }
 
 body {
 	font-family: "Standard", sans-serif;
+	text-align: centre;
+	background-color: #9999cc;
+	color: #000000;
+}
+
+h1 {
+	font-size: 96px;
+}
+
+p {
+	font-size: 36px;
 }
