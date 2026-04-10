@@ -23,6 +23,10 @@ img {
 	image-rendering: pixelated;
 }
 
+#upgrade-shop img {
+	width: 128px;
+}
+
 .clickable-cookie {
 	width: 256px;
 	cursor: pointer;
