@@ -18,3 +18,13 @@ h1 {
 p {
 	font-size: 36px;
 }
+
+.clickable-cookie {
+	width: 256px;
+	cursor: pointer;
+	transition: transform 0.1s;
+}
+
+.cookie:active {
+	transform: scale(0.9);
+}
