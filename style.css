@@ -7,7 +7,7 @@
 body {
 	font-family: "Standard", sans-serif;
 	text-align: center;
-	background-color: #9999cc;
+	background-color: #0099cc;
 	color: #000000;
 }
 
@@ -21,6 +21,11 @@ p {
 
 img {
 	image-rendering: pixelated;
+}
+
+button {
+	background-color: #0066cc;
+	cursor: pointer;
 }
 
 #upgrade-shop img {

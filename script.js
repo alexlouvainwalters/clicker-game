@@ -48,6 +48,25 @@ function loadGame() {
 	}
 }
 
+function resetGame() {
+	localStorage.removeItem("save");
+
+	game = {
+		cookies: 0,
+		lifetimeCookies: 0,
+		clicks: 0,
+		clickStrength: 1,
+		upgradesUnlocked: {},
+		upgradesOwned: {}
+	};
+
+	document.getElementById("upgrade-shop").innerHTML = "";
+
+	updateDisplay();
+	displayUpgradesInit();
+	saveGame();
+}
+
 function changeScore(quantity = 1) {
 	game.cookies += quantity;
 	if (quantity > 0) {
@@ -55,7 +74,7 @@ function changeScore(quantity = 1) {
 	}
 
 	checkLockedUpgrades();
-	updateDisplay();
+	updateCookieDisplay();
 	saveGame();
 }
 
@@ -64,7 +83,7 @@ function processCookieClick() {
 	changeScore(game.clickStrength);
 }
 
-function updateDisplay() {
+function updateCookieDisplay() {
 	const displayText = game.cookies === 1 ? "cookie" : "cookies";
 
 	document.getElementById("cookie-display").textContent = game.cookies + " " + displayText;
@@ -123,7 +142,7 @@ function displayUpgradesInit() {
 }
 
 loadGame();
-updateDisplay();
+updateCookieDisplay();
 displayUpgradesInit();
 checkLockedUpgrades();
 
