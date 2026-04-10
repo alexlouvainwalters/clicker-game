@@ -24,8 +24,10 @@ img {
 }
 
 button {
+	width: 256px;
+	height: 96px;
 	font-family: "Standard", sans-serif;
-	font-size: 24px;
+	font-size: 48px;
 	background-color: #0066cc;
 	color: #ffffff;
 	cursor: pointer;

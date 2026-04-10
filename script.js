@@ -13,7 +13,7 @@ let upgrades = {
 		name: "Rustic Oven",
 		description: "Click Strength x2",
 		cost: 50,
-		currentCookiesRequirement: 0,
+		currentCookiesRequirement: 10,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.clickStrength *= 2
@@ -23,7 +23,7 @@ let upgrades = {
 		name: "Modern Oven",
 		description: "Click Strength x5",
 		cost: 200,
-		currentCookiesRequirement: 0,
+		currentCookiesRequirement: 100,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.clickStrength *= 5
@@ -62,7 +62,7 @@ function resetGame() {
 
 	document.getElementById("upgrade-shop").innerHTML = "";
 
-	updateDisplay();
+	updateCookieDisplay();
 	displayUpgradesInit();
 	saveGame();
 }
