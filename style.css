@@ -29,6 +29,6 @@ img {
 	transition: transform 0.1s;
 }
 
-.cookie:active {
+.clickable-cookie:active {
 	transform: scale(0.9);
 }
