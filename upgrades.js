@@ -12,9 +12,19 @@ let upgrades = {
 	modernOven: {
 		identifier: "modern-oven-upgrade",
 		name: "Modern Oven",
-		description: "Click Strength x5",
+		description: "Click Strength x2",
 		cost: 200,
-		currentCookiesRequirement: 100,
+		currentCookiesRequirement: 50,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => game.clickStrength *= 2
+	},
+	fancyOven: {
+		identifier: "fancy-oven-upgrade",
+		name: "Fancy Oven",
+		description: "Click Strength x5",
+		cost: 1000,
+		currentCookiesRequirement: 400,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.clickStrength *= 5

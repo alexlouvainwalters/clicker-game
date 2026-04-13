@@ -3,19 +3,28 @@ let buildings = {
 		identifier: "finger-building",
 		name: "Finger",
 		description: "(Base CPS: 0.1)",
-		startCost: 200,
+		startCost: 20,
 		costMultiplier: 1.12,
-		currentCookiesRequirement: 100,
+		currentCookiesRequirement: 10,
 		baseCPS: 0.1
 	},
 	grammy: {
 		identifier: "grammy-building",
 		name: "Grammy",
 		description: "(Base CPS: 1)",
-		startCost: 500,
+		startCost: 100,
 		costMultiplier: 1.15,
-		currentCookiesRequirement: 250,
+		currentCookiesRequirement: 20,
 		baseCPS: 1
+	},
+	cookieTree: {
+		identifier: "cookie-tree-building",
+		name: "Cookie Tree",
+		description: "(Base CPS: 5)",
+		startCost: 800,
+		costMultiplier: 1.17,
+		currentCookiesRequirement: 200,
+		baseCPS: 5
 	}
 };
 
