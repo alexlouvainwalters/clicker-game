@@ -7,6 +7,7 @@ let game = {
 	buildingsUnlocked: {},
 	numFingerOwned: 0,
 	numGrammyOwned: 0,
+	numCookieTreeOwned: 0,
 	upgradesUnlocked: {},
 	upgradesOwned: {}
 };
