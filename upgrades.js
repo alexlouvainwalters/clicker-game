@@ -21,6 +21,33 @@ let upgrades = {
 	}
 };
 
+function createUpgradeContainer(id) {
+	const upgrade = upgrades[id];
+
+	const container = document.createElement("div");
+	container.id = upgrade.identifier;
+	container.classList.add("upgrade-shop-item");
+
+	const image = document.createElement("img");
+	image.src = "assets/images/" + upgrade.identifier + ".png";
+	image.onclick = () => buyUpgrade(id);
+
+	const name = document.createElement("p");
+	name.textContent = upgrade.name;
+
+	const description = document.createElement("p");
+	description.textContent = upgrade.description;
+
+	const cost = document.createElement("p");
+	cost.textContent = "Cost: " + upgrade.cost;
+
+	container.appendChild(image);
+	container.appendChild(name);
+	container.appendChild(description);
+	container.appendChild(cost);
+	document.getElementById("upgrade-shop").appendChild(container);
+}
+
 function checkLockedUpgrades() {
 	for (let id in upgrades) {
 		const upgrade = upgrades[id];
@@ -43,11 +70,7 @@ function unlockUpgrade(id) {
 	if (!document.getElementById(upgrade.identifier)) {
 		game.upgradesUnlocked[id] = true;
 
-		const img = document.createElement("img");
-		img.id = upgrade.identifier;
-		img.src = "assets/images/" + upgrade.identifier + ".png";
-		img.onclick = () => buyUpgrade(id);
-		document.getElementById("upgrade-shop").appendChild(img);
+		createUpgradeContainer(id);
 	}
 }
 

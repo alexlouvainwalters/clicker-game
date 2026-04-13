@@ -19,8 +19,80 @@ let buildings = {
 	}
 };
 
+function getCPS() {
+	return (
+		game.numFingerOwned * buildings.finger.baseCPS +
+		game.numGrammyOwned * buildings.grammy.baseCPS
+	);
+}
+
+function processTickCPS() {
+	game.cookiesHundredthBuffer += Math.round(getCPS() * 10);
+
+	changeScore(Math.floor(game.cookiesHundredthBuffer / 100));
+	game.cookiesHundredthBuffer %= 100;
+}
+
 function getBuildingCost(building, owned) {
 	return Math.floor(building.startCost * Math.pow(building.costMultiplier, owned));
+}
+
+function createBuildingContainer(id) {
+	const building = buildings[id];
+
+	const container = document.createElement("div");
+	container.id = building.identifier;
+	container.classList.add("building-shop-item");
+
+	const numOwned = document.createElement("p");
+	const ownedKey = "num" + id.charAt(0).toUpperCase() + id.slice(1) + "Owned";
+	const owned = game[ownedKey];
+	numOwned.classList.add("building-shop-owned");
+	numOwned.textContent = owned;
+
+	const image = document.createElement("img");
+	image.src = "assets/images/" + building.identifier + ".png";
+	image.onclick = () => buyBuilding(id);
+
+	const name = document.createElement("p");
+	name.textContent = building.name;
+
+	const description = document.createElement("p");
+	description.textContent = building.description;
+
+	const cost = document.createElement("p");
+	cost.classList.add("building-shop-cost");
+	cost.textContent = "Cost: " + getBuildingCost(building, owned);
+
+	const cps = document.createElement("p");
+	cps.classList.add("building-shop-cps");
+	cps.textContent = "CPS: " + (owned * building.baseCPS);
+
+	container.appendChild(numOwned);
+	container.appendChild(image);
+	container.appendChild(name);
+	container.appendChild(description);
+	container.appendChild(cost);
+	container.appendChild(cps);
+	document.getElementById("building-shop").appendChild(container);
+}
+
+function updateBuildingContainer(id) {
+	const building = buildings[id];
+
+	const container = document.getElementById(building.identifier);
+
+	const ownedKey = "num" + id.charAt(0).toUpperCase() + id.slice(1) + "Owned";
+	const owned = game[ownedKey];
+
+	const numOwned = container.querySelector(".building-shop-owned");
+	numOwned.textContent = owned;
+
+	const cost = container.querySelector(".building-shop-cost");
+	cost.textContent = "Cost: " + getBuildingCost(building, owned);
+
+	const cps = container.querySelector(".building-shop-cps");
+	cps.textContent = "CPS: " + (owned * building.baseCPS);
 }
 
 function checkLockedBuildings() {
@@ -42,11 +114,7 @@ function unlockBuilding(id) {
 	if (!document.getElementById(building.identifier)) {
 		game.buildingsUnlocked[id] = true;
 
-		const img = document.createElement("img");
-		img.id = building.identifier;
-		img.src = "assets/images/" + building.identifier + ".png";
-		img.onclick = () => buyBuilding(id);
-		document.getElementById("building-shop").appendChild(img);
+		createBuildingContainer(id);
 	}
 }
 
@@ -59,6 +127,8 @@ function buyBuilding(id) {
 	if (game.cookies >= getBuildingCost(building, owned)) {
 		changeScore(-getBuildingCost(building, owned));
 		game[ownedKey]++;
+
+		updateBuildingContainer(id);
 	}
 }
 
@@ -68,18 +138,4 @@ function displayBuildingsInit() {
 			unlockBuilding(id);
 		}
 	}
-}
-
-function getCPS() {
-	return (
-		game.numFingerOwned * buildings.finger.baseCPS +
-		game.numGrammyOwned * buildings.grammy.baseCPS
-	);
-}
-
-function processTickCPS() {
-	game.cookiesHundredthBuffer += Math.round(getCPS() * 10);
-
-	changeScore(Math.floor(game.cookiesHundredthBuffer / 100));
-	game.cookiesHundredthBuffer %= 100;
 }
