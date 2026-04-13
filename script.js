@@ -64,12 +64,16 @@ function loadGame() {
 	if (save) {
 		const parsed = JSON.parse(save);
 
-		game = {
-			...game,
-			...parsed,
-			upgradesUnlocked: parsed.upgradesUnlocked || {},
-			upgradesOwned: parsed.upgradesOwned || {}
-		};
+		game.cookies = parsed.cookies ?? 0;
+		game.cookiesHundredthBuffer = parsed.cookiesHundredthBuffer ?? 0;
+		game.lifetimeCookies = parsed.lifetimeCookies ?? 0;
+		game.clicks = parsed.clicks ?? 0;
+		game.clickStrength = parsed.clickStrength ?? 1;
+		game.buildingsUnlocked = parsed.buildingsUnlocked ?? {};
+		game.numFingerOwned = parsed.numFingerOwned ?? 0;
+		game.numGrammyOwned = parsed.numGrammyOwned ?? 0;
+		game.upgradesUnlocked = parsed.upgradesUnlocked ?? {};
+		game.upgradesOwned = parsed.upgradesOwned ?? {};
 	}
 }
 
@@ -78,6 +82,7 @@ function resetGame() {
 
 	game = {
 		cookies: 0,
+		cookiesHundredthBuffer: 0,
 		lifetimeCookies: 0,
 		clicks: 0,
 		clickStrength: 1,
