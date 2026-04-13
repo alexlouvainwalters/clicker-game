@@ -11,10 +11,15 @@
 }
 
 body {
+	display: flex;
 	font-family: "Standard", sans-serif;
 	text-align: center;
 	background-color: #0099cc;
 	color: #000000;
+}
+
+.screen-half {
+	width: 50%;
 }
 
 h1 {

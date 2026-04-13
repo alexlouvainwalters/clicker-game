@@ -9,19 +9,25 @@
 	</head>
 
 	<body>
-		<h1>Cookie Clicker</h1>
+		<div class="layout">
+			<div class="screen-half">
+				<h1>Cookie Clicker</h1>
 
-		<h2 id="cookie-display">0 cookies</h2>
-		<h3 id="cps-display">per second: 0</h3>
-		<img src="assets/images/cookie.png" class="clickable-cookie" onclick="processCookieClick()">
+				<h2 id="cookie-display">0 cookies</h2>
+				<h3 id="cps-display">per second: 0</h3>
+				<img src="assets/images/cookie.png" class="clickable-cookie" onclick="processCookieClick()">
 
-		<p>Upgrades</p>
-		<div id="upgrade-shop"></div>
+				<button onclick="resetGame()">Reset Game</button>
+			</div>
 
-		<p>Buildings</p>
-		<div id="building-shop"></div>
+			<div class="screen-half">
+				<p>Upgrades</p>
+				<div id="upgrade-shop"></div>
 
-		<button onclick="resetGame()">Reset Game</button>
+				<p>Buildings</p>
+				<div id="building-shop"></div>
+			</div>
+		</div>
 
 		<script src="game.js" defer></script>
 		<script src="upgrades.js" defer></script>
