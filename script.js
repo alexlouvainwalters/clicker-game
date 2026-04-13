@@ -1,5 +1,6 @@
 let game = {
 	cookies: 0,
+	cookiesHundredthBuffer: 0,
 	lifetimeCookies: 0,
 	clicks: 0,
 	clickStrength: 1,
@@ -179,9 +180,6 @@ function checkLockedBuildings() {
 	for (let id in buildings) {
 		const building = buildings[id];
 
-		console.log(!game.buildingsUnlocked[id]);
-		console.log(game.cookies >= building.currentCookiesRequirement);
-
 		if (
 			!game.buildingsUnlocked[id] &&
 			game.cookies >= building.currentCookiesRequirement
@@ -232,6 +230,13 @@ function getCPS() {
 	);
 }
 
+function processTickCPS() {
+	game.cookiesHundredthBuffer += Math.round(getCPS() * 10);
+
+	changeScore(Math.floor(game.cookiesHundredthBuffer / 100));
+	game.cookiesHundredthBuffer %= 100;
+}
+
 loadGame();
 updateCookieDisplay();
 displayUpgradesInit();
@@ -245,5 +250,5 @@ setInterval(() => {
 }, 500);
 
 setInterval(() => {
-	changeScore(getCPS() / 10)
+	processTickCPS();
 }, 100);
