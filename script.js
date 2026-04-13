@@ -179,6 +179,9 @@ function checkLockedBuildings() {
 	for (let id in buildings) {
 		const building = buildings[id];
 
+		console.log(!game.buildingsUnlocked[id]);
+		console.log(game.cookies >= building.currentCookiesRequirement);
+
 		if (
 			!game.buildingsUnlocked[id] &&
 			game.cookies >= building.currentCookiesRequirement
@@ -235,8 +238,6 @@ displayUpgradesInit();
 displayBuildingsInit();
 checkLockedUpgrades();
 checkLockedBuildings();
-unlockBuilding("finger");
-unlockBuilding("grammy");
 
 setInterval(() => {
 	checkLockedUpgrades();

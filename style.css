@@ -38,6 +38,10 @@ button {
 	width: 128px;
 }
 
+#building-shop img {
+	width: 128px;
+}
+
 .clickable-cookie {
 	width: 256px;
 	cursor: pointer;
