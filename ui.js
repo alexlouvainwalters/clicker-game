@@ -1,7 +1,8 @@
 function updateCookieDisplay() {
 	const displayText = game.cookies === 1 ? "cookie" : "cookies";
-
 	document.getElementById("cookie-display").textContent = game.cookies + " " + displayText;
+
+	document.getElementById("cps-display").textContent = "per second: " + getCPS();
 }
 
 function changeScore(quantity = 1) {
