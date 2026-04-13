@@ -12,10 +12,13 @@
 }
 
 body {
-	display: flex;
 	font-family: "Standard", sans-serif;
 	background-color: #0099cc;
 	color: #000000;
+}
+
+.layout {
+	display: flex;
 }
 
 .screen-half {
