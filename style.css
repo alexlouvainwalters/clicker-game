@@ -20,6 +20,9 @@ body {
 
 .screen-half {
 	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;	
 }
 
 h1 {
