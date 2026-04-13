@@ -235,6 +235,8 @@ displayUpgradesInit();
 displayBuildingsInit();
 checkLockedUpgrades();
 checkLockedBuildings();
+unlockBuilding("finger");
+unlockBuilding("grammy");
 
 setInterval(() => {
 	checkLockedUpgrades();
