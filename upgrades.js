@@ -34,28 +34,18 @@ let upgrades = {
 function createUpgradeContainer(id) {
 	const upgrade = upgrades[id];
 
-	const container = document.createElement("div");
-	container.id = upgrade.identifier;
-	container.classList.add("upgrade-shop-item");
-
 	const image = document.createElement("img");
+	image.id = upgrade.identifier;
 	image.src = "assets/images/" + upgrade.identifier + ".png";
 	image.onclick = () => buyUpgrade(id);
+	image.onmouseenter = (e) => showTooltip(
+		upgrade.name + "\n" + upgrade.description + "\nCost: " + formatNumber(upgrade.cost),
+		e
+	);
+	image.onmouseleave = () => hideTooltip();
 
-	const name = document.createElement("p");
-	name.textContent = upgrade.name;
 
-	const description = document.createElement("p");
-	description.textContent = upgrade.description;
-
-	const cost = document.createElement("p");
-	cost.textContent = "Cost: " + formatNumber(upgrade.cost);
-
-	container.appendChild(image);
-	container.appendChild(name);
-	container.appendChild(description);
-	container.appendChild(cost);
-	document.getElementById("upgrade-shop").appendChild(container);
+	document.getElementById("upgrade-shop").appendChild(image);
 }
 
 function checkLockedUpgrades() {

@@ -72,6 +72,16 @@ button {
 	cursor: pointer;
 }
 
+#tooltip {
+	position: absolute;
+	display: none;
+	font-size: 24px;
+	background-color: #ffffff7f;
+	color: #0000007f;
+	white-space: pre-line;
+	pointer-events: none;
+}
+
 .clickable-cookie {
 	width: 256px;
 	cursor: pointer;
