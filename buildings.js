@@ -63,7 +63,7 @@ function createBuildingContainer(id) {
 	const numOwned = document.createElement("p");
 	const owned = game.buildingsOwned[id];
 	numOwned.classList.add("building-shop-owned");
-	numOwned.textContent = owned;
+	numOwned.textContent = formatNumber(owned);
 
 	const image = document.createElement("img");
 	image.src = "assets/images/" + building.identifier + ".png";
@@ -77,11 +77,11 @@ function createBuildingContainer(id) {
 
 	const cost = document.createElement("p");
 	cost.classList.add("building-shop-cost");
-	cost.textContent = "Cost: " + getBuildingCost(id);
+	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
 
 	const cps = document.createElement("p");
 	cps.classList.add("building-shop-cps");
-	cps.textContent = "CPS: " + (owned * building.baseCPS);
+	cps.textContent = "CPS: " + formatNumber(owned * building.baseCPS);
 
 	container.appendChild(numOwned);
 	container.appendChild(image);
@@ -100,13 +100,13 @@ function updateBuildingContainer(id) {
 	const owned = game.buildingsOwned[id];
 
 	const numOwned = container.querySelector(".building-shop-owned");
-	numOwned.textContent = owned;
+	numOwned.textContent = formatNumber(owned);
 
 	const cost = container.querySelector(".building-shop-cost");
-	cost.textContent = "Cost: " + getBuildingCost(id);
+	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
 
 	const cps = container.querySelector(".building-shop-cps");
-	cps.textContent = "CPS: " + (owned * building.baseCPS);
+	cps.textContent = "CPS: " + formatNumber(owned * building.baseCPS);
 }
 
 function checkLockedBuildings() {

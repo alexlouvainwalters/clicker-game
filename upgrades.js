@@ -49,7 +49,7 @@ function createUpgradeContainer(id) {
 	description.textContent = upgrade.description;
 
 	const cost = document.createElement("p");
-	cost.textContent = "Cost: " + upgrade.cost;
+	cost.textContent = "Cost: " + formatNumber(upgrade.cost);
 
 	container.appendChild(image);
 	container.appendChild(name);
