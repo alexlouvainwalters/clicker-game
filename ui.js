@@ -39,13 +39,18 @@ function processCookieClick() {
 	changeScore(game.clickStrength);
 }
 
-function showTooltip(text, e) {
+function showTooltip(text) {
 	tooltip.textContent = text;
 	tooltip.style.display = "block";
-	tooltip.style.left = e.pageX + "px";
-	tooltip.style.top = e.pageY + "px";
 }
 
 function hideTooltip() {
 	tooltip.style.display = "none";
 }
+
+document.addEventListener("mousemove", (e) => {
+	if (tooltip.style.display === "block") {
+		tooltip.style.left = e.pageX + 16 + "px";
+		tooltip.style.top = e.pageY + 16 + "px";
+	}
+})

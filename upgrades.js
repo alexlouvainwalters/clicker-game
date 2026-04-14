@@ -38,10 +38,7 @@ function createUpgradeContainer(id) {
 	image.id = upgrade.identifier;
 	image.src = "assets/images/" + upgrade.identifier + ".png";
 	image.onclick = () => buyUpgrade(id);
-	image.onmouseenter = (e) => showTooltip(
-		upgrade.name + "\n" + upgrade.description + "\nCost: " + formatNumber(upgrade.cost),
-		e
-	);
+	image.onmouseenter = () => showTooltip(upgrade.name + "\n" + upgrade.description + "\nCost: " + formatNumber(upgrade.cost));
 	image.onmouseleave = () => hideTooltip();
 
 
