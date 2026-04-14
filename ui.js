@@ -39,7 +39,7 @@ function processCookieClick() {
 	changeScore(game.clickStrength);
 }
 
-function showTooltip(text) {
+function showTooltip(text, e) {
 	tooltip.textContent = text;
 	tooltip.style.display = "block";
 	tooltip.style.left = e.pageX + "px";
