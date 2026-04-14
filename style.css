@@ -64,10 +64,12 @@ button {
 
 #upgrade-shop img {
 	width: 128px;
+	cursor: pointer;
 }
 
 #building-shop img {
 	width: 128px;
+	cursor: pointer;
 }
 
 .clickable-cookie {
