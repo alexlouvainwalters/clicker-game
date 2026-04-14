@@ -29,10 +29,13 @@ let buildings = {
 };
 
 function getCPS() {
-	return (
-		game.numFingerOwned * buildings.finger.baseCPS +
-		game.numGrammyOwned * buildings.grammy.baseCPS
-	);
+	let total = 0;
+
+	for (let id in buildings) {
+		total += game.buildingsOwned[id] * buildings[id].baseCPS;
+	}
+
+	return total;
 }
 
 function processTickCPS() {
@@ -42,8 +45,12 @@ function processTickCPS() {
 	game.cookiesHundredthBuffer %= 100;
 }
 
-function getBuildingCost(building, owned) {
-	return Math.floor(building.startCost * Math.pow(building.costMultiplier, owned));
+function getBuildingCost(id) {
+	const building = buildings[id];
+
+	const owned = game.buildingsOwned[id];
+
+	return Math.floor(building.startCost * Math.pow(building.costMultiplier, owned);
 }
 
 function createBuildingContainer(id) {
@@ -54,8 +61,7 @@ function createBuildingContainer(id) {
 	container.classList.add("building-shop-item");
 
 	const numOwned = document.createElement("p");
-	const ownedKey = "num" + id.charAt(0).toUpperCase() + id.slice(1) + "Owned";
-	const owned = game[ownedKey];
+	const owned = game.buildingsOwned[id];
 	numOwned.classList.add("building-shop-owned");
 	numOwned.textContent = owned;
 
@@ -91,8 +97,7 @@ function updateBuildingContainer(id) {
 
 	const container = document.getElementById(building.identifier);
 
-	const ownedKey = "num" + id.charAt(0).toUpperCase() + id.slice(1) + "Owned";
-	const owned = game[ownedKey];
+	const owned = game.buildingsOwned[id];
 
 	const numOwned = container.querySelector(".building-shop-owned");
 	numOwned.textContent = owned;
@@ -130,12 +135,11 @@ function unlockBuilding(id) {
 function buyBuilding(id) {
 	const building =  buildings[id];
 
-	const ownedKey = "num" + id.charAt(0).toUpperCase() + id.slice(1) + "Owned";
-	const owned = game[ownedKey];
+	const owned = game.buildingsOwned[id];
 
 	if (game.cookies >= getBuildingCost(building, owned)) {
 		changeScore(-getBuildingCost(building, owned));
-		game[ownedKey]++;
+		game.buildingsOwned[id]++;
 
 		updateBuildingContainer(id);
 	}

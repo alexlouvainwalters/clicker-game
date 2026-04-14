@@ -13,10 +13,13 @@ function loadGame() {
 		game.clicks = parsed.clicks ?? 0;
 		game.clickStrength = parsed.clickStrength ?? 1;
 		game.buildingsUnlocked = parsed.buildingsUnlocked ?? {};
-		game.numFingerOwned = parsed.numFingerOwned ?? 0;
-		game.numGrammyOwned = parsed.numGrammyOwned ?? 0;
+		game.buildingsOwned = parsed.buildingsOwned ?? {};
 		game.upgradesUnlocked = parsed.upgradesUnlocked ?? {};
 		game.upgradesOwned = parsed.upgradesOwned ?? {};
+	}
+
+	for (let id in buildings) {
+		game.buildingsOwned[id] ??= 0;
 	}
 }
 
@@ -30,11 +33,14 @@ function resetGame() {
 		clicks: 0,
 		clickStrength: 1,
 		buildingsUnlocked: {},
-		numFingerOwned: 0,
-		numGrammyOwned: 0,
+		buildingsOwned: {},
 		upgradesUnlocked: {},
 		upgradesOwned: {}
 	};
+
+	for (let id in buildings) {
+		game.buildingsOwned[id] = 0;
+	}
 
 	document.getElementById("upgrade-shop").innerHTML = "";
 	document.getElementById("building-shop").innerHTML = "";

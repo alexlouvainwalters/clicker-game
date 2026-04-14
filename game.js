@@ -5,9 +5,7 @@ let game = {
 	clicks: 0,
 	clickStrength: 1,
 	buildingsUnlocked: {},
-	numFingerOwned: 0,
-	numGrammyOwned: 0,
-	numCookieTreeOwned: 0,
+	buildingsOwned: {},
 	upgradesUnlocked: {},
 	upgradesOwned: {}
 };
