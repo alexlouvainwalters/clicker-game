@@ -50,7 +50,7 @@ function getBuildingCost(id) {
 
 	const owned = game.buildingsOwned[id];
 
-	return Math.floor(building.startCost * Math.pow(building.costMultiplier, owned);
+	return Math.floor(building.startCost * Math.pow(building.costMultiplier, owned));
 }
 
 function createBuildingContainer(id) {
@@ -77,7 +77,7 @@ function createBuildingContainer(id) {
 
 	const cost = document.createElement("p");
 	cost.classList.add("building-shop-cost");
-	cost.textContent = "Cost: " + getBuildingCost(building, owned);
+	cost.textContent = "Cost: " + getBuildingCost(id);
 
 	const cps = document.createElement("p");
 	cps.classList.add("building-shop-cps");
@@ -103,7 +103,7 @@ function updateBuildingContainer(id) {
 	numOwned.textContent = owned;
 
 	const cost = container.querySelector(".building-shop-cost");
-	cost.textContent = "Cost: " + getBuildingCost(building, owned);
+	cost.textContent = "Cost: " + getBuildingCost(id);
 
 	const cps = container.querySelector(".building-shop-cps");
 	cps.textContent = "CPS: " + (owned * building.baseCPS);
@@ -137,8 +137,8 @@ function buyBuilding(id) {
 
 	const owned = game.buildingsOwned[id];
 
-	if (game.cookies >= getBuildingCost(building, owned)) {
-		changeScore(-getBuildingCost(building, owned));
+	if (game.cookies >= getBuildingCost(id)) {
+		changeScore(-getBuildingCost(id));
 		game.buildingsOwned[id]++;
 
 		updateBuildingContainer(id);

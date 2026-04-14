@@ -18,7 +18,7 @@ function loadGame() {
 		game.upgradesOwned = parsed.upgradesOwned ?? {};
 	}
 
-	for (let id in buildings) {
+	for (let id in game.buildings) {
 		game.buildingsOwned[id] ??= 0;
 	}
 }
