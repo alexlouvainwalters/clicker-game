@@ -68,7 +68,7 @@ let upgrades = {
 	shinyRollingPin: {
 		identifier: "shiny-rolling-pin-upgrade",
 		name: "Shiny Rolling Pin",
-		effectDescription: "Click Strength x10",
+		effectDescription: "Grammy CPS x2",
 		description: "For Grammy's Secret Recipe.",
 		cost: 50000,
 		currentCookiesRequirement: 15000,
