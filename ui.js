@@ -40,12 +40,8 @@ function processCookieClick() {
 }
 
 function showTooltip(text) {
-	updateTooltip(text);
-	tooltip.style.display = "block";
-}
-
-function updateTooltip(text) {
 	tooltip.textContent = text;
+	tooltip.style.display = "block";
 }
 
 function hideTooltip() {
