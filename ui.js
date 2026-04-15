@@ -6,6 +6,7 @@ const longFormat = new Intl.NumberFormat("en", {
 });
 
 const tooltip = document.getElementById("tooltip");
+let currentTooltip = null;
 
 function formatNumber(num) {
 	if (Math.abs(num) < 1000000) {
@@ -31,12 +32,51 @@ function changeScore(quantity = 1) {
 	checkLockedUpgrades();
 	checkLockedBuildings();
 	updateCookieDisplay();
+	refreshAffordability();
 	saveGame();
 }
 
 function processCookieClick() {
 	game.clicks++;
 	changeScore(game.clickStrength);
+}
+
+function refreshAffordability() {
+	for (let id in buildings) {
+		const building = buildings[id];
+		const container = document.getElementById(building.identifier);
+
+		if (container) {
+			const cost = container.querySelector(".building-shop-cost");
+			if (cost) {
+				updateAffordabilityDisplay(cost, getBuildingCost(id));
+			}
+		}
+	}
+
+	if (tooltip.style.display === "block" && currentTooltip) {
+		const tooltipCost = document.querySelector("#tooltip .tooltip-cost");
+
+		if (tooltipCost) {
+			for (let id in upgrades) {
+				const upgrade = upgrades[id];
+
+				if (upgrade.identifier === currentTooltip) {
+					updateAffordabilityDisplay(tooltipCost, upgrade.cost);
+					return;
+				}
+			}
+
+			for (let id in buildings) {
+				const building = buildings[id];
+
+				if (building.identifier === currentTooltip) {
+					updateAffordabilityDisplay(tooltipCost, getBuildingCost(id));
+					return;
+				}
+			}
+		}
+	}
 }
 
 function updateAffordabilityDisplay(element, cost) {

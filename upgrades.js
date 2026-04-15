@@ -107,9 +107,20 @@ function createUpgradeContainer(id) {
 	image.id = upgrade.identifier;
 	image.src = "assets/images/" + upgrade.identifier + ".png";
 	image.onclick = () => buyUpgrade(id);
-	image.onmouseenter = () => showTooltip(upgrade.name + "\n" + upgrade.effectDescription + "\n\"" + upgrade.description + "\"\nCost: " + formatNumber(upgrade.cost));
-	image.onmouseleave = () => hideTooltip();
-
+	image.onmouseenter = () => {
+		currentTooltip = upgrade.identifier;
+		showTooltip(
+			upgrade.name +
+			"<br>" + upgrade.effectDescription +
+			"<br>\"" + upgrade.description + "\"" +
+			"<br><span class=\"tooltip-cost\">Cost: " + formatNumber(upgrade.cost) + "</span"
+		);
+		updateAffordabilityDisplay(document.querySelector("#tooltip .tooltip-cost"), upgrade.cost);
+	};
+	image.onmouseleave = () => {
+		currentTooltip = null;
+		hideTooltip();
+	};
 
 	document.getElementById("upgrade-shop").appendChild(image);
 }

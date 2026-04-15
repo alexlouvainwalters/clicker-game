@@ -72,6 +72,7 @@ function createBuildingContainer(id) {
 	image.src = "assets/images/" + building.identifier + ".png";
 	image.onclick = () => buyBuilding(id);
 	image.onmouseenter = () => {
+		currentTooltip = building.identifier;
 		showTooltip(
 			"Owned: " + formatNumber(owned) +
 			"<br>" + building.name +
@@ -82,7 +83,10 @@ function createBuildingContainer(id) {
 		);
 		updateAffordabilityDisplay(document.querySelector("#tooltip .tooltip-cost"), getBuildingCost(id));
 	};
-	image.onmouseleave = () => hideTooltip();
+	image.onmouseleave = () => {
+		currentTooltip = null;
+		hideTooltip();
+	};
 
 	const cost = document.createElement("h2");
 	cost.classList.add("building-shop-cost");
@@ -112,6 +116,7 @@ function updateBuildingContainer(id) {
 
 	const image = container.querySelector(".building-shop-image");
 	image.onmouseenter = () => {
+		currentTooltip = building.identifier;
 		showTooltip(
 			"Owned: " + formatNumber(owned) +
 			"<br>" + building.name +
