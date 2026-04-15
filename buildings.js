@@ -74,7 +74,7 @@ function createBuildingContainer(id) {
 
 	const cpsStrength = document.createElement("p");
 	const strength = game.buildingsStrength[id];
-	cpsStength.classList.add("building-shop-cps-strength");
+	cpsStrength.classList.add("building-shop-cps-strength");
 	cpsStrength.textContent = "Base CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")";
 
 	const description = document.createElement("p");
@@ -91,6 +91,7 @@ function createBuildingContainer(id) {
 	container.appendChild(numOwned);
 	container.appendChild(image);
 	container.appendChild(name);
+	container.appendChild(cpsStrength);
 	container.appendChild(description);
 	container.appendChild(cost);
 	container.appendChild(cps);
