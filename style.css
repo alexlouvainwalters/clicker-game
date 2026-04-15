@@ -76,8 +76,8 @@ button {
 	position: absolute;
 	display: none;
 	font-size: 24px;
-	background-color: #ffffff7f;
-	color: #0000007f;
+	background-color: #ffffffcc;
+	color: #000000cc;
 	white-space: pre-line;
 	pointer-events: none;
 }
