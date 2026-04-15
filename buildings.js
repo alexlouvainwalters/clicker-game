@@ -62,12 +62,14 @@ function createBuildingContainer(id) {
 
 	const numOwned = document.createElement("h1");
 	const owned = game.buildingsOwned[id];
+	numOwned.classList.add("building-shop-item-component");
 	numOwned.classList.add("building-shop-owned");
 	numOwned.textContent = formatNumber(owned);
 
 	const strength = game.buildingsStrength[id];
 
 	const image = document.createElement("img");
+	image.classList.add("building-shop-item-component");
 	image.classList.add("building-shop-image");
 	image.src = "assets/images/" + building.identifier + ".png";
 	image.onclick = () => buyBuilding(id);
@@ -75,6 +77,7 @@ function createBuildingContainer(id) {
 	image.onmouseleave = () => hideTooltip();
 
 	const cost = document.createElement("h2");
+	cost.classList.add("building-shop-item-component");
 	cost.classList.add("building-shop-cost");
 	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
 
