@@ -97,6 +97,8 @@ function updateBuildingContainer(id) {
 
 	const cost = container.querySelector(".building-shop-cost");
 	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
+
+	updateTooltip(formatNumber(owned) + "\n" + building.name + "\nBase CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")\n\"" + building.description + "\"\nCost: " + formatNumber(getBuildingCost(id)) + "\nCPS: " + formatNumber(owned * building.baseCPS * strength));
 }
 
 function checkLockedBuildings() {
