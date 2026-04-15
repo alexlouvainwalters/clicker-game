@@ -39,13 +39,20 @@ function processCookieClick() {
 	changeScore(game.clickStrength);
 }
 
+function updateAffordabilityDisplay(element, cost) {
+	const affordable = game.cookies >= cost;
+
+	element.classList.remove("affordable", "unaffordable");
+	element.classList.add(affordable ? "affordable" : "unaffordable");
+}
+
 function showTooltip(text) {
 	updateTooltip(text);
 	tooltip.style.display = "block";
 }
 
 function updateTooltip(text) {
-	tooltip.textContent = text;
+	tooltip.innerHTML = text;
 }
 
 function hideTooltip() {
@@ -57,4 +64,4 @@ document.addEventListener("mousemove", (e) => {
 		tooltip.style.left = e.pageX + 16 + "px";
 		tooltip.style.top = e.pageY + 16 + "px";
 	}
-})
+});

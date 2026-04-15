@@ -82,7 +82,7 @@ button {
 	display: none;
 	font-size: 24px;
 	background-color: #ffffffcc;
-	color: #000000cc;
+	color: #000000;
 	white-space: pre-line;
 	pointer-events: none;
 }
@@ -106,6 +106,14 @@ button {
 .building-shop-cost {
 	justify-self: center;
 	text-align: center;
+}
+
+.affordable {
+	color: #00ff00;
+}
+
+.unaffordable {
+	color: #ff0000;
 }
 
 .clickable-cookie {

@@ -71,12 +71,23 @@ function createBuildingContainer(id) {
 	image.classList.add("building-shop-image");
 	image.src = "assets/images/" + building.identifier + ".png";
 	image.onclick = () => buyBuilding(id);
-	image.onmouseenter = () => showTooltip("Owned: " + formatNumber(owned) + "\n" + building.name + "\nBase CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")\n\"" + building.description + "\"\nCost: " + formatNumber(getBuildingCost(id)) + "\nCPS: " + formatNumber(owned * building.baseCPS * strength));
+	image.onmouseenter = () => {
+		showTooltip(
+			"Owned: " + formatNumber(owned) +
+			"<br>" + building.name +
+			"<br>Base CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")" +
+			"<br>\"" + building.description + "\"" +
+			"<br><span class=\"tooltip-cost\">Cost: " + formatNumber(getBuildingCost(id)) + "</span>" +
+			"<br>CPS: " + formatNumber(owned * building.baseCPS * strength)
+		);
+		updateAffordabilityDisplay(document.querySelector("#tooltip .tooltip-cost"), getBuildingCost(id));
+	};
 	image.onmouseleave = () => hideTooltip();
 
 	const cost = document.createElement("h2");
 	cost.classList.add("building-shop-cost");
 	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
+	updateAffordabilityDisplay(cost, getBuildingCost(id));
 
 	container.appendChild(numOwned);
 	container.appendChild(image);
@@ -97,11 +108,30 @@ function updateBuildingContainer(id) {
 
 	const cost = container.querySelector(".building-shop-cost");
 	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
+	updateAffordabilityDisplay(cost, getBuildingCost(id));
 
 	const image = container.querySelector(".building-shop-image");
-	image.onmouseenter = () => showTooltip("Owned: " + formatNumber(owned) + "\n" + building.name + "\nBase CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")\n\"" + building.description + "\"\nCost: " + formatNumber(getBuildingCost(id)) + "\nCPS: " + formatNumber(owned * building.baseCPS * strength));
+	image.onmouseenter = () => {
+		showTooltip(
+			"Owned: " + formatNumber(owned) +
+			"<br>" + building.name +
+			"<br>Base CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")" +
+			"<br>\"" + building.description + "\"" +
+			"<br><span class=\"tooltip-cost\">Cost: " + formatNumber(getBuildingCost(id)) + "</span>" +
+			"<br>CPS: " + formatNumber(owned * building.baseCPS * strength)
+		);
+		updateAffordabilityDisplay(document.querySelector("#tooltip .tooltip-cost"), getBuildingCost(id));
+	};
 
-	updateTooltip("Owned: " + formatNumber(owned) + "\n" + building.name + "\nBase CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")\n\"" + building.description + "\"\nCost: " + formatNumber(getBuildingCost(id)) + "\nCPS: " + formatNumber(owned * building.baseCPS * strength));
+	updateTooltip(
+		"Owned: " + formatNumber(owned) +
+		"<br>" + building.name +
+		"<br>Base CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")" +
+		"<br>\"" + building.description + "\"" +
+		"<br><span class=\"tooltip-cost\">Cost: " + formatNumber(getBuildingCost(id)) + "</span>" +
+		"<br>CPS: " + formatNumber(owned * building.baseCPS * strength)
+	);
+	updateAffordabilityDisplay(document.querySelector("#tooltip .tooltip-cost"), getBuildingCost(id));
 }
 
 function checkLockedBuildings() {
