@@ -75,6 +75,28 @@ let upgrades = {
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["grammy"] *= 2
+	},
+	leakyHose: {
+		identifier: "leaky-hose-upgrade",
+		name: "Leaky Hose",
+		effectDescription: "Cookie Tree CPS x3",
+		description: "Just found it out back.",
+		cost: 20000,
+		currentCookiesRequirement: 5000,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => game.buildingsStrength["cookieTree"] *= 1.5
+	},
+	cleanHose: {
+		identifier: "clean-hose-upgrade",
+		name: "Clean Hose",
+		effectDescription: "Cookie Tree CPS x3",
+		description: "Lord of the Rinse.",
+		cost: 100000,
+		currentCookiesRequirement: 25000,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => game.buildingsStrength["cookieTree"] *= 2
 	}
 };
 
