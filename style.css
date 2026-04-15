@@ -84,6 +84,7 @@ button {
 }
 
 .building-shop-item {
+	flex: 1;
 	display: flex;
 	width: 100%;
 	align-items: center;
