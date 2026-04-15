@@ -78,7 +78,7 @@ function createBuildingContainer(id) {
 	cpsStrength.textContent = "Base CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")";
 
 	const description = document.createElement("p");
-	description.textContent = building.description;
+	description.textContent = "\"" + building.description + "\"";
 
 	const cost = document.createElement("p");
 	cost.classList.add("building-shop-cost");
