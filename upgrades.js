@@ -85,7 +85,7 @@ let upgrades = {
 		currentCookiesRequirement: 5000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
-		effect: () => game.buildingsStrength["cookieTree"] *= 1.5
+		effect: () => game.buildingsStrength["cookieTree"] *= 3
 	},
 	cleanHose: {
 		identifier: "clean-hose-upgrade",
@@ -96,7 +96,7 @@ let upgrades = {
 		currentCookiesRequirement: 25000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
-		effect: () => game.buildingsStrength["cookieTree"] *= 2
+		effect: () => game.buildingsStrength["cookieTree"] *= 3
 	}
 };
 
