@@ -2,7 +2,7 @@ let buildings = {
 	finger: {
 		identifier: "finger-building",
 		name: "Finger",
-		description: "(Base CPS: 0.1)",
+		description: "Finger-lickin' good!",
 		startCost: 20,
 		costMultiplier: 1.12,
 		currentCookiesRequirement: 10,
@@ -11,7 +11,7 @@ let buildings = {
 	grammy: {
 		identifier: "grammy-building",
 		name: "Grammy",
-		description: "(Base CPS: 1)",
+		description: "Baked with love.",
 		startCost: 100,
 		costMultiplier: 1.15,
 		currentCookiesRequirement: 20,
@@ -20,7 +20,7 @@ let buildings = {
 	cookieTree: {
 		identifier: "cookie-tree-building",
 		name: "Cookie Tree",
-		description: "(Base CPS: 5)",
+		description: "Because they grow on trees, right?",
 		startCost: 800,
 		costMultiplier: 1.17,
 		currentCookiesRequirement: 200,
@@ -72,6 +72,11 @@ function createBuildingContainer(id) {
 	const name = document.createElement("p");
 	name.textContent = building.name;
 
+	const cpsStrength = document.createElement("p");
+	const strength = game.buildingsStrength[id];
+	cpsStength.classList.add("building-shop-cps-strength");
+	cpsStrength.textContent = "Base CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")";
+
 	const description = document.createElement("p");
 	description.textContent = building.description;
 
@@ -80,7 +85,6 @@ function createBuildingContainer(id) {
 	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
 
 	const cps = document.createElement("p");
-	const strength = game.buildingsStrength[id];
 	cps.classList.add("building-shop-cps");
 	cps.textContent = "CPS: " + formatNumber(owned * building.baseCPS * strength);
 
@@ -103,11 +107,14 @@ function updateBuildingContainer(id) {
 	const numOwned = container.querySelector(".building-shop-owned");
 	numOwned.textContent = formatNumber(owned);
 
+	const cpsStrength = container.querySelector(".building-shop-cps-strength");
+	const strength = game.buildingsStrength[id];
+	cpsStrength.textContent = "Base CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")";
+
 	const cost = container.querySelector(".building-shop-cost");
 	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
 
 	const cps = container.querySelector(".building-shop-cps");
-	const strength = game.buildingsStrength[id];
 	cps.textContent = "CPS: " + formatNumber(owned * building.baseCPS * strength);
 }
 

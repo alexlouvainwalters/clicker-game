@@ -2,7 +2,8 @@ let upgrades = {
 	rusticOven: {
 		identifier: "rustic-oven-upgrade",
 		name: "Rustic Oven",
-		description: "Click Strength x10",
+		effectDescription: "Click Strength x10",
+		description: "Born to cook pizzas, forced to bake cookies.",
 		cost: 500,
 		currentCookiesRequirement: 25,
 		lifetimeCookiesRequirement: 0,
@@ -12,7 +13,8 @@ let upgrades = {
 	modernOven: {
 		identifier: "modern-oven-upgrade",
 		name: "Modern Oven",
-		description: "Click Strength x10",
+		effectDescription: "Click Strength x10",
+		description: "With all new temperature dials!",
 		cost: 10000,
 		currentCookiesRequirement: 1000,
 		lifetimeCookiesRequirement: 0,
@@ -22,7 +24,8 @@ let upgrades = {
 	fancyOven: {
 		identifier: "fancy-oven-upgrade",
 		name: "Fancy Oven",
-		description: "Click Strength x10",
+		effectDescription: "Click Strength x10",
+		description: "The future of cookies is now.",
 		cost: 500000,
 		currentCookiesRequirement: 25000,
 		lifetimeCookiesRequirement: 0,
@@ -32,7 +35,8 @@ let upgrades = {
 	mouseClick: {
 		identifier: "mouse-click-upgrade",
 		name: "Mouse Click",
-		description: "Finger CPS x2",
+		effectDescription: "Finger CPS x2",
+		description: "Of Clicks and Cookies.",
 		cost: 5000,
 		currentCookiesRequirement: 500,
 		lifetimeCookiesRequirement: 0,
@@ -42,7 +46,8 @@ let upgrades = {
 	autoClick: {
 		identifier: "auto-click-upgrade",
 		name: "Auto Click",
-		description: "Finger CPS x5",
+		effectDescription: "Finger CPS x5",
+		description: "Wait, that's cheating!",
 		cost: 20000,
 		currentCookiesRequirement: 4000,
 		lifetimeCookiesRequirement: 0,
@@ -52,7 +57,8 @@ let upgrades = {
 	dullRollingPin: {
 		identifier: "dull-rolling-pin-upgrade",
 		name: "Dull Rolling Pin",
-		description: "Grammy CPS x1.5",
+		effectDescription: "Grammy CPS x1.5",
+		description: "That's pincredible!",
 		cost: 10000,
 		currentCookiesRequirement: 2000,
 		lifetimeCookiesRequirement: 0,
@@ -62,7 +68,8 @@ let upgrades = {
 	shinyRollingPin: {
 		identifier: "shiny-rolling-pin-upgrade",
 		name: "Shiny Rolling Pin",
-		description: "Grammy CPS x2",
+		effectDescription: "Click Strength x10",
+		description: "For Grammy's Secret Recipe.",
 		cost: 50000,
 		currentCookiesRequirement: 15000,
 		lifetimeCookiesRequirement: 0,
@@ -78,7 +85,7 @@ function createUpgradeContainer(id) {
 	image.id = upgrade.identifier;
 	image.src = "assets/images/" + upgrade.identifier + ".png";
 	image.onclick = () => buyUpgrade(id);
-	image.onmouseenter = () => showTooltip(upgrade.name + "\n" + upgrade.description + "\nCost: " + formatNumber(upgrade.cost));
+	image.onmouseenter = () => showTooltip(upgrade.name + "\n" + upgrade.effectDescription + "\n" + upgrade.description + "\nCost: " + formatNumber(upgrade.cost));
 	image.onmouseleave = () => hideTooltip();
 
 
