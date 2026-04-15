@@ -126,6 +126,11 @@ function buyUpgrade(id) {
 		upgrade.effect();
 		changeScore(-upgrade.cost);
 		document.getElementById(upgrade.identifier).remove();
+
+		hideTooltip();
+		for (let id in buildings) {
+			updateBuildingContainer(id);
+		}
 	}
 }
 
