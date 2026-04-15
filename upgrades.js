@@ -2,32 +2,72 @@ let upgrades = {
 	rusticOven: {
 		identifier: "rustic-oven-upgrade",
 		name: "Rustic Oven",
-		description: "Click Strength x2",
+		description: "Click Strength x10",
 		cost: 50,
 		currentCookiesRequirement: 10,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
-		effect: () => game.clickStrength *= 2
+		effect: () => game.clickStrength *= 10
 	},
 	modernOven: {
 		identifier: "modern-oven-upgrade",
 		name: "Modern Oven",
-		description: "Click Strength x2",
+		description: "Click Strength x10",
 		cost: 200,
 		currentCookiesRequirement: 50,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
-		effect: () => game.clickStrength *= 2
+		effect: () => game.clickStrength *= 10
 	},
 	fancyOven: {
 		identifier: "fancy-oven-upgrade",
 		name: "Fancy Oven",
-		description: "Click Strength x5",
+		description: "Click Strength x10",
 		cost: 1000,
 		currentCookiesRequirement: 400,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
-		effect: () => game.clickStrength *= 5
+		effect: () => game.clickStrength *= 10
+	},
+	mouseClick: {
+		identifier: "mouse-click-upgrade",
+		name: "Mouse Click",
+		description: "Finger CPS x2",
+		cost: 5000,
+		currentCookiesRequirement: 500,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => buildings.finger.baseCPS *= 2
+	},
+	autoClick: {
+		identifier: "auto-click-upgrade",
+		name: "Auto Click",
+		description: "Finger CPS x5",
+		cost: 20000,
+		currentCookiesRequirement: 4000,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => buildings.finger.baseCPS *= 5
+	},
+	dullRollingPin: {
+		identifier: "dull-rolling-pin",
+		name: "Dull Rolling Pin",
+		description: "Grammy CPS x1.5",
+		cost: 10000,
+		currentCookiesRequirement: 2000,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => buildings.grammy.baseCPS *= 1.5
+	},
+	shinyRollingPin: {
+		identifier: "shiny-rolling-pin",
+		name: "Shiny Rolling Pin",
+		description: "Grammy CPS x2",
+		cost: 50000,
+		currentCookiesRequirement: 15000,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => buildings.grammy.baseCPS *= 2
 	}
 };
 
