@@ -65,36 +65,22 @@ function createBuildingContainer(id) {
 	numOwned.classList.add("building-shop-owned");
 	numOwned.textContent = formatNumber(owned);
 
+	const strength = game.buildingsStrength[id];
+
 	const image = document.createElement("img");
+	image.id = building.identifier;
 	image.src = "assets/images/" + building.identifier + ".png";
 	image.onclick = () => buyBuilding(id);
-
-	const name = document.createElement("p");
-	name.textContent = building.name;
-
-	const cpsStrength = document.createElement("p");
-	const strength = game.buildingsStrength[id];
-	cpsStrength.classList.add("building-shop-cps-strength");
-	cpsStrength.textContent = "Base CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")";
-
-	const description = document.createElement("p");
-	description.textContent = "\"" + building.description + "\"";
+	image.onmouseenter = () => showTooltip(formatNumber(owned) + "\n" + building.name + "\nBase CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")\n\"" + building.description + "\"\nCost: " + formatNumber(getBuildingCost(id)) + "\nCPS: " + formatNumber(owned * building.baseCPS * strength));
+	image.onmouseleave = () => hideTooltip();
 
 	const cost = document.createElement("p");
 	cost.classList.add("building-shop-cost");
 	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
 
-	const cps = document.createElement("p");
-	cps.classList.add("building-shop-cps");
-	cps.textContent = "CPS: " + formatNumber(owned * building.baseCPS * strength);
-
 	container.appendChild(numOwned);
 	container.appendChild(image);
-	container.appendChild(name);
-	container.appendChild(cpsStrength);
-	container.appendChild(description);
 	container.appendChild(cost);
-	container.appendChild(cps);
 	document.getElementById("building-shop").appendChild(container);
 }
 
@@ -104,19 +90,13 @@ function updateBuildingContainer(id) {
 	const container = document.getElementById(building.identifier);
 
 	const owned = game.buildingsOwned[id];
+	const strength = game.buildingsStrength[id];
 
 	const numOwned = container.querySelector(".building-shop-owned");
 	numOwned.textContent = formatNumber(owned);
 
-	const cpsStrength = container.querySelector(".building-shop-cps-strength");
-	const strength = game.buildingsStrength[id];
-	cpsStrength.textContent = "Base CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")";
-
 	const cost = container.querySelector(".building-shop-cost");
 	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
-
-	const cps = container.querySelector(".building-shop-cps");
-	cps.textContent = "CPS: " + formatNumber(owned * building.baseCPS * strength);
 }
 
 function checkLockedBuildings() {
