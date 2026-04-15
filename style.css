@@ -82,6 +82,12 @@ button {
 	pointer-events: none;
 }
 
+.building-shop-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
 .clickable-cookie {
 	width: 256px;
 	cursor: pointer;

@@ -100,6 +100,8 @@ function updateBuildingContainer(id) {
 
 	const image = container.querySelector(".building-shop-image");
 	image.onmouseenter = () => showTooltip("Owned: " + formatNumber(owned) + "\n" + building.name + "\nBase CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")\n\"" + building.description + "\"\nCost: " + formatNumber(getBuildingCost(id)) + "\nCPS: " + formatNumber(owned * building.baseCPS * strength));
+
+	updateTooltip("Owned: " + formatNumber(owned) + "\n" + building.name + "\nBase CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")\n\"" + building.description + "\"\nCost: " + formatNumber(getBuildingCost(id)) + "\nCPS: " + formatNumber(owned * building.baseCPS * strength));
 }
 
 function checkLockedBuildings() {
