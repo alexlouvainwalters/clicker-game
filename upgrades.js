@@ -3,8 +3,8 @@ let upgrades = {
 		identifier: "rustic-oven-upgrade",
 		name: "Rustic Oven",
 		description: "Click Strength x10",
-		cost: 50,
-		currentCookiesRequirement: 10,
+		cost: 500,
+		currentCookiesRequirement: 25,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.clickStrength *= 10
@@ -13,8 +13,8 @@ let upgrades = {
 		identifier: "modern-oven-upgrade",
 		name: "Modern Oven",
 		description: "Click Strength x10",
-		cost: 200,
-		currentCookiesRequirement: 50,
+		cost: 10000,
+		currentCookiesRequirement: 1000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.clickStrength *= 10
@@ -23,8 +23,8 @@ let upgrades = {
 		identifier: "fancy-oven-upgrade",
 		name: "Fancy Oven",
 		description: "Click Strength x10",
-		cost: 1000,
-		currentCookiesRequirement: 400,
+		cost: 500000,
+		currentCookiesRequirement: 25000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.clickStrength *= 10
@@ -50,7 +50,7 @@ let upgrades = {
 		effect: () => buildings.finger.baseCPS *= 5
 	},
 	dullRollingPin: {
-		identifier: "dull-rolling-pin",
+		identifier: "dull-rolling-pin-upgrade",
 		name: "Dull Rolling Pin",
 		description: "Grammy CPS x1.5",
 		cost: 10000,
@@ -60,7 +60,7 @@ let upgrades = {
 		effect: () => buildings.grammy.baseCPS *= 1.5
 	},
 	shinyRollingPin: {
-		identifier: "shiny-rolling-pin",
+		identifier: "shiny-rolling-pin-upgrade",
 		name: "Shiny Rolling Pin",
 		description: "Grammy CPS x2",
 		cost: 50000,
