@@ -19,7 +19,7 @@ function loadGame() {
 		game.upgradesOwned = parsed.upgradesOwned ?? {};
 	}
 
-	for (let id in game.buildings) {
+	for (let id in buildings) {
 		game.buildingsOwned[id] ??= 0;
 		game.buildingsStrength[id] ??= 1;
 	}
@@ -36,12 +36,14 @@ function resetGame() {
 		clickStrength: 1,
 		buildingsUnlocked: {},
 		buildingsOwned: {},
+		buildingsStrength: {},
 		upgradesUnlocked: {},
 		upgradesOwned: {}
 	};
 
 	for (let id in buildings) {
 		game.buildingsOwned[id] = 0;
+		game.buildingsStrength[id] = 1;
 	}
 
 	document.getElementById("upgrade-shop").innerHTML = "";

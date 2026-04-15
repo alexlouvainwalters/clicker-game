@@ -45,6 +45,7 @@ function showTooltip(text) {
 }
 
 function hideTooltip() {
+	tooltip.textContent = "";
 	tooltip.style.display = "none";
 }
 
