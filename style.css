@@ -31,6 +31,10 @@ body {
 	align-items: stretch;
 }
 
+.screen-half:first-child {
+	align-items: center;
+}
+
 h1 {
 	font-size: 96px;
 }
@@ -92,6 +96,7 @@ button {
 
 .building-shop-owned {
 	justify-self: start;
+	text-align: center;
 }
 
 .building-shop-image {
@@ -100,6 +105,7 @@ button {
 
 .building-shop-cost {
 	justify-self: end;
+	text-align: center;
 }
 
 .clickable-cookie {
