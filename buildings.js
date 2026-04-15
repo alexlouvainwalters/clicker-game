@@ -32,7 +32,7 @@ function getCPS() {
 	let total = 0;
 
 	for (let id in buildings) {
-		total += game.buildingsOwned[id] * buildings[id].baseCPS;
+		total += game.buildingsOwned[id] * buildings[id].baseCPS * game.buildingsStrength[id];
 	}
 
 	return total;
@@ -80,8 +80,9 @@ function createBuildingContainer(id) {
 	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
 
 	const cps = document.createElement("p");
+	const strength = game.buildingsStrength[id];
 	cps.classList.add("building-shop-cps");
-	cps.textContent = "CPS: " + formatNumber(owned * building.baseCPS);
+	cps.textContent = "CPS: " + formatNumber(owned * building.baseCPS * strength);
 
 	container.appendChild(numOwned);
 	container.appendChild(image);
@@ -106,7 +107,8 @@ function updateBuildingContainer(id) {
 	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
 
 	const cps = container.querySelector(".building-shop-cps");
-	cps.textContent = "CPS: " + formatNumber(owned * building.baseCPS);
+	const strength = game.buildingsStrength[id];
+	cps.textContent = "CPS: " + formatNumber(owned * building.baseCPS * strength);
 }
 
 function checkLockedBuildings() {

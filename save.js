@@ -14,12 +14,14 @@ function loadGame() {
 		game.clickStrength = parsed.clickStrength ?? 1;
 		game.buildingsUnlocked = parsed.buildingsUnlocked ?? {};
 		game.buildingsOwned = parsed.buildingsOwned ?? {};
+		game.buildingsStrength = parsed.buildingsStrength ?? {};
 		game.upgradesUnlocked = parsed.upgradesUnlocked ?? {};
 		game.upgradesOwned = parsed.upgradesOwned ?? {};
 	}
 
 	for (let id in game.buildings) {
 		game.buildingsOwned[id] ??= 0;
+		game.buildingsStrength[id] ??= 1;
 	}
 }
 

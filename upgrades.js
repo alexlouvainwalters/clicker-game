@@ -37,7 +37,7 @@ let upgrades = {
 		currentCookiesRequirement: 500,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
-		effect: () => buildings.finger.baseCPS *= 2
+		effect: () => game.buildingsStrength[finger] *= 2
 	},
 	autoClick: {
 		identifier: "auto-click-upgrade",
@@ -47,7 +47,7 @@ let upgrades = {
 		currentCookiesRequirement: 4000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
-		effect: () => buildings.finger.baseCPS *= 5
+		effect: () => game.buildingsStrength[finger] *= 5
 	},
 	dullRollingPin: {
 		identifier: "dull-rolling-pin-upgrade",
@@ -57,7 +57,7 @@ let upgrades = {
 		currentCookiesRequirement: 2000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
-		effect: () => buildings.grammy.baseCPS *= 1.5
+		effect: () => game.buildingsStrength[grammy] *= 1.5
 	},
 	shinyRollingPin: {
 		identifier: "shiny-rolling-pin-upgrade",
@@ -67,7 +67,7 @@ let upgrades = {
 		currentCookiesRequirement: 15000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
-		effect: () => buildings.grammy.baseCPS *= 2
+		effect: () => game.buildingsStrength[grammy] *= 2
 	}
 };
 

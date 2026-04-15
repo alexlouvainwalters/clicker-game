@@ -6,6 +6,7 @@ let game = {
 	clickStrength: 1,
 	buildingsUnlocked: {},
 	buildingsOwned: {},
+	buildingsStrength: {},
 	upgradesUnlocked: {},
 	upgradesOwned: {}
 };
