@@ -135,7 +135,7 @@ function createUpgradeContainer(id) {
 			upgrade.name +
 			"<br>" + upgrade.effectDescription +
 			"<br>\"" + upgrade.description + "\"" +
-			"<br><span class=\"tooltip-cost\">Cost: " + formatNumber(upgrade.cost) + "</span"
+			"<br><span class=\"tooltip-cost\">Cost: " + formatNumber(upgrade.cost) + "</span>"
 		);
 		updateAffordabilityDisplay(document.querySelector("#tooltip .tooltip-cost"), upgrade.cost);
 	};
