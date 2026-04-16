@@ -25,6 +25,15 @@ let buildings = {
 		costMultiplier: 1.17,
 		currentCookiesRequirement: 200,
 		baseCPS: 5
+	},
+	doughstone: {
+		identifier: "doughstone-building",
+		name: "Doughstone",
+		description: "The world is built on cookies. Literally.",
+		startCost: 20_000,
+		costMultiplier: 1.2,
+		currentCookiesRequirement: 5_000,
+		baseCPS: 100
 	}
 };
 

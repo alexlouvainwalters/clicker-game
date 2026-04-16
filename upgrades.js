@@ -15,8 +15,8 @@ let upgrades = {
 		name: "Modern Oven",
 		effectDescription: "Click Strength x10",
 		description: "With all new temperature dials!",
-		cost: 10000,
-		currentCookiesRequirement: 1000,
+		cost: 10_000,
+		currentCookiesRequirement: 1_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.clickStrength *= 10
@@ -26,8 +26,8 @@ let upgrades = {
 		name: "Fancy Oven",
 		effectDescription: "Click Strength x10",
 		description: "The future of cookies is now.",
-		cost: 500000,
-		currentCookiesRequirement: 25000,
+		cost: 500_000,
+		currentCookiesRequirement: 25_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.clickStrength *= 10
@@ -37,7 +37,7 @@ let upgrades = {
 		name: "Mouse Click",
 		effectDescription: "Finger CPS x2",
 		description: "Of Clicks and Cookies.",
-		cost: 5000,
+		cost: 5_000,
 		currentCookiesRequirement: 500,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
@@ -48,8 +48,8 @@ let upgrades = {
 		name: "Auto Click",
 		effectDescription: "Finger CPS x5",
 		description: "Wait, that's cheating!",
-		cost: 20000,
-		currentCookiesRequirement: 4000,
+		cost: 20_000,
+		currentCookiesRequirement: 4_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["finger"] *= 5
@@ -59,8 +59,8 @@ let upgrades = {
 		name: "Dull Rolling Pin",
 		effectDescription: "Grammy CPS x1.5",
 		description: "That's pincredible!",
-		cost: 10000,
-		currentCookiesRequirement: 2000,
+		cost: 10_000,
+		currentCookiesRequirement: 2_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["grammy"] *= 1.5
@@ -70,8 +70,8 @@ let upgrades = {
 		name: "Shiny Rolling Pin",
 		effectDescription: "Grammy CPS x2",
 		description: "For Grammy's Secret Recipe.",
-		cost: 50000,
-		currentCookiesRequirement: 15000,
+		cost: 50_000,
+		currentCookiesRequirement: 15_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["grammy"] *= 2
@@ -81,8 +81,8 @@ let upgrades = {
 		name: "Leaky Hose",
 		effectDescription: "Cookie Tree CPS x3",
 		description: "Just found it out back.",
-		cost: 20000,
-		currentCookiesRequirement: 5000,
+		cost: 20_000,
+		currentCookiesRequirement: 5_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["cookieTree"] *= 3
@@ -92,12 +92,34 @@ let upgrades = {
 		name: "Clean Hose",
 		effectDescription: "Cookie Tree CPS x3",
 		description: "Lord of the Rinse.",
-		cost: 100000,
-		currentCookiesRequirement: 25000,
+		cost: 100_000,
+		currentCookiesRequirement: 25_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["cookieTree"] *= 3
-	}
+	},
+	brokenDrill: {
+		identifier: "broken-drill-upgrade",
+		name: "Broken Drill",
+		effectDescription: "Doughstone CPS x1.5",
+		description: "Repairman refused cookies as payment.",
+		cost: 500_000,
+		currentCookiesRequirement: 50_000,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => game.buildingsStrength["doughtstone"] *= 1.5
+	},
+	industryDrill: {
+		identifier: "industry-drill-upgrade",
+		name: "Industry Drill",
+		effectDescription: "Doughstone CPS x10",
+		description: "Cookie density increases with depth.",
+		cost: 5_000_000,
+		currentCookiesRequirement: 1_000_000,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => game.buildingsStrength["doughstone"] *= 10
+	},
 };
 
 function createUpgradeContainer(id) {
