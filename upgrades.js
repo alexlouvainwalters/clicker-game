@@ -107,7 +107,7 @@ let upgrades = {
 		currentCookiesRequirement: 50_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
-		effect: () => game.buildingsStrength["doughtstone"] *= 1.5
+		effect: () => game.buildingsStrength["doughstone"] *= 1.5
 	},
 	industryDrill: {
 		identifier: "industry-drill-upgrade",
