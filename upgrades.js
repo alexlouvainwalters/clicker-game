@@ -4,7 +4,7 @@ let upgrades = {
 		name: "Plain Cookie",
 		effectDescription: "CPS x2",
 		description: "Can't go wrong with it.",
-		cost: 1_000,
+		cost: 10_000,
 		currentCookiesRequirement: 0,
 		lifetimeCookiesRequirement: 10_000,
 		clicksRequirement: 0,
