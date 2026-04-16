@@ -113,20 +113,32 @@ function updateBuildingContainer(id) {
 
 	const container = document.getElementById(building.identifier);
 
-	const owned = game.buildingsOwned[id];
-	const strength = game.buildingsStrength[id] * game.cpsMultiplier;
+	if (container) {
+		const owned = game.buildingsOwned[id];
+		const strength = game.buildingsStrength[id] * game.cpsMultiplier;
 
-	const numOwned = container.querySelector(".building-shop-owned");
-	numOwned.textContent = formatNumber(owned);
+		const numOwned = container.querySelector(".building-shop-owned");
+		numOwned.textContent = formatNumber(owned);
 
-	const cost = container.querySelector(".building-shop-cost");
-	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
-	updateAffordabilityDisplay(cost, getBuildingCost(id));
+		const cost = container.querySelector(".building-shop-cost");
+		cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
+		updateAffordabilityDisplay(cost, getBuildingCost(id));
 
-	const image = container.querySelector(".building-shop-image");
-	image.onmouseenter = () => {
-		currentTooltip = building.identifier;
-		showTooltip(
+		const image = container.querySelector(".building-shop-image");
+		image.onmouseenter = () => {
+			currentTooltip = building.identifier;
+			showTooltip(
+				"Owned: " + formatNumber(owned) +
+				"<br>" + building.name +
+				"<br>Base CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")" +
+				"<br>\"" + building.description + "\"" +
+				"<br><span class=\"tooltip-cost\">Cost: " + formatNumber(getBuildingCost(id)) + "</span>" +
+				"<br>CPS: " + formatNumber(owned * building.baseCPS * strength)
+			);
+			updateAffordabilityDisplay(document.querySelector("#tooltip .tooltip-cost"), getBuildingCost(id));
+		};
+
+		updateTooltip(
 			"Owned: " + formatNumber(owned) +
 			"<br>" + building.name +
 			"<br>Base CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")" +
@@ -135,17 +147,7 @@ function updateBuildingContainer(id) {
 			"<br>CPS: " + formatNumber(owned * building.baseCPS * strength)
 		);
 		updateAffordabilityDisplay(document.querySelector("#tooltip .tooltip-cost"), getBuildingCost(id));
-	};
-
-	updateTooltip(
-		"Owned: " + formatNumber(owned) +
-		"<br>" + building.name +
-		"<br>Base CPS: " + formatNumber(building.baseCPS * strength) + " (" + formatNumber(building.baseCPS) + " x " + formatNumber(strength) + ")" +
-		"<br>\"" + building.description + "\"" +
-		"<br><span class=\"tooltip-cost\">Cost: " + formatNumber(getBuildingCost(id)) + "</span>" +
-		"<br>CPS: " + formatNumber(owned * building.baseCPS * strength)
-	);
-	updateAffordabilityDisplay(document.querySelector("#tooltip .tooltip-cost"), getBuildingCost(id));
+	}
 }
 
 function checkLockedBuildings() {
