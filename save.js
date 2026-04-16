@@ -12,6 +12,7 @@ function loadGame() {
 		game.lifetimeCookies = parsed.lifetimeCookies ?? 0;
 		game.clicks = parsed.clicks ?? 0;
 		game.clickStrength = parsed.clickStrength ?? 1;
+		game.cpsMultiplier = parsed.clickStrength ?? 1;
 		game.buildingsUnlocked = parsed.buildingsUnlocked ?? {};
 		game.buildingsOwned = parsed.buildingsOwned ?? {};
 		game.buildingsStrength = parsed.buildingsStrength ?? {};
@@ -34,6 +35,7 @@ function resetGame() {
 		lifetimeCookies: 0,
 		clicks: 0,
 		clickStrength: 1,
+		cpsMultiplier: 1,
 		buildingsUnlocked: {},
 		buildingsOwned: {},
 		buildingsStrength: {},

@@ -4,6 +4,7 @@ let game = {
 	lifetimeCookies: 0,
 	clicks: 0,
 	clickStrength: 1,
+	cpsMultiplier: 1,
 	buildingsUnlocked: {},
 	buildingsOwned: {},
 	buildingsStrength: {},

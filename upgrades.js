@@ -1,4 +1,37 @@
 let upgrades = {
+	plainCookie: {
+		identifier: "plain-cookie-upgrade",
+		name: "Plain Cookie",
+		effectDescription: "CPS x2",
+		description: ".",
+		cost: 1_000,
+		currentCookiesRequirement: 0,
+		lifetimeCookiesRequirement: 10_000,
+		clicksRequirement: 0,
+		effect: () => game.cpsMultiplier *= 2
+	},
+	crunchyCookie: {
+		identifier: "crunchy-cookie-upgrade",
+		name: "Crunchy Cookie",
+		effectDescription: "CPS x2",
+		description: ".",
+		cost: 100_000,
+		currentCookiesRequirement: 0,
+		lifetimeCookiesRequirement: 100_000,
+		clicksRequirement: 0,
+		effect: () => game.cpsMultiplier *= 2
+	},
+	chocolateChipCookie: {
+		identifier: "chocolate-chip-cookie-upgrade",
+		name: "Chocolate Chip Cookie",
+		effectDescription: "CPS x2",
+		description: ".",
+		cost: 10_000_000,
+		currentCookiesRequirement: 0,
+		lifetimeCookiesRequirement: 10_000_000,
+		clicksRequirement: 0,
+		effect: () => game.cpsMultiplier *= 2
+	},
 	rusticOven: {
 		identifier: "rustic-oven-upgrade",
 		name: "Rustic Oven",
@@ -32,9 +65,9 @@ let upgrades = {
 		clicksRequirement: 0,
 		effect: () => game.clickStrength *= 10
 	},
-	mouseClick: {
-		identifier: "mouse-click-upgrade",
-		name: "Mouse Click",
+	mouseClicker: {
+		identifier: "mouse-clicker-upgrade",
+		name: "Mouse Clicker",
 		effectDescription: "Finger CPS x2",
 		description: "Of Clicks and Cookies.",
 		cost: 5_000,
@@ -43,13 +76,46 @@ let upgrades = {
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["finger"] *= 2
 	},
-	autoClick: {
-		identifier: "auto-click-upgrade",
-		name: "Auto Click",
-		effectDescription: "Finger CPS x5",
-		description: "Wait, that's cheating!",
+	doubleClicker: {
+		identifier: "double-clicker-upgrade",
+		name: "Double Clicker",
+		effectDescription: "Finger CPS x2",
+		description: "Micetosis?",
 		cost: 20_000,
 		currentCookiesRequirement: 4_000,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => game.buildingsStrength["finger"] *= 2
+	},
+	autoClicker: {
+		identifier: "auto-clicker-upgrade",
+		name: "Auto Clicker",
+		effectDescription: "Finger CPS x5",
+		description: "Wait, that's cheating!",
+		cost: 80_000,
+		currentCookiesRequirement: 40_000,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => game.buildingsStrength["finger"] *= 5
+	},
+	turboClicker: {
+		identifier: "turbo-clicker-upgrade",
+		name: "Turbo Clicker",
+		effectDescription: "Finger CPS x4",
+		description: "Rocket fuel powered.",
+		cost: 400_000,
+		currentCookiesRequirement: 150_000,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => game.buildingsStrength["finger"] *= 4
+	},
+	hyperClicker: {
+		identifier: "hyper-clicker-upgrade",
+		name: "Hyper Clicker",
+		effectDescription: "Finger CPS x5",
+		description: "Don't give sugar to a mouse...",
+		cost: 2_000_000,
+		currentCookiesRequirement: 500_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["finger"] *= 5
@@ -76,6 +142,28 @@ let upgrades = {
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["grammy"] *= 2
 	},
+	metalRollingPin: {
+		identifier: "metal-rolling-pin-upgrade",
+		name: "Metal Rolling Pin",
+		effectDescription: "Grammy CPS x2.5",
+		description: "For tough-to-knead dough.",
+		cost: 1_000_000,
+		currentCookiesRequirement: 300_000,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => game.buildingsStrength["grammy"] *= 2.5
+	},
+	spikyRollingPin: {
+		identifier: "spiky-rolling-pin-upgrade",
+		name: "Spiky Rolling Pin",
+		effectDescription: "Grammy CPS x3",
+		description: "Store out of sight from children.",
+		cost: 50_000,
+		currentCookiesRequirement: 15_000,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => game.buildingsStrength["grammy"] *= 3
+	},
 	leakyHose: {
 		identifier: "leaky-hose-upgrade",
 		name: "Leaky Hose",
@@ -94,6 +182,17 @@ let upgrades = {
 		description: "Lord of the Rinse.",
 		cost: 100_000,
 		currentCookiesRequirement: 25_000,
+		lifetimeCookiesRequirement: 0,
+		clicksRequirement: 0,
+		effect: () => game.buildingsStrength["cookieTree"] *= 3
+	},
+	stainlessSteelHose: {
+		identifier: "stainless-steel-hose-upgrade",
+		name: "Stainless Steel Hose",
+		effectDescription: "Cookie Tree CPS x3",
+		description: "With a 1 day warranty included!",
+		cost: 1_000_000,
+		currentCookiesRequirement: 200_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["cookieTree"] *= 3

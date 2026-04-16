@@ -41,7 +41,7 @@ function getCPS() {
 	let total = 0;
 
 	for (let id in buildings) {
-		total += game.buildingsOwned[id] * buildings[id].baseCPS * game.buildingsStrength[id];
+		total += game.buildingsOwned[id] * buildings[id].baseCPS * game.buildingsStrength[id] * game.cpsMultiplier;
 	}
 
 	return total;
@@ -74,7 +74,7 @@ function createBuildingContainer(id) {
 	numOwned.classList.add("building-shop-owned");
 	numOwned.textContent = formatNumber(owned);
 
-	const strength = game.buildingsStrength[id];
+	const strength = game.buildingsStrength[id] * game.cpsMultiplier;
 
 	const image = document.createElement("img");
 	image.classList.add("building-shop-image");
@@ -114,7 +114,7 @@ function updateBuildingContainer(id) {
 	const container = document.getElementById(building.identifier);
 
 	const owned = game.buildingsOwned[id];
-	const strength = game.buildingsStrength[id];
+	const strength = game.buildingsStrength[id] * game.cpsMultiplier;
 
 	const numOwned = container.querySelector(".building-shop-owned");
 	numOwned.textContent = formatNumber(owned);
