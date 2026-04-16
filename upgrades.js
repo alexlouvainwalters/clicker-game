@@ -158,8 +158,8 @@ let upgrades = {
 		name: "Spiky Rolling Pin",
 		effectDescription: "Grammy CPS x3",
 		description: "Store out of sight from children.",
-		cost: 50_000,
-		currentCookiesRequirement: 15_000,
+		cost: 10_000_000,
+		currentCookiesRequirement: 1_000_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["grammy"] *= 3
