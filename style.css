@@ -87,24 +87,40 @@ button {
 	border: none;
 }
 
+#upgrade-list {
+	line-height: 0;
+}
+
+#achievement-list {
+	line-height: 0;
+}
+
+#upgrade-shop {
+	line-height: 0;
+}
+
+#building-shop {
+	line-height: 0;
+}
+
 #upgrade-list img {
-	display: inline-block;
+	display: block;
 	width: 64px;
 }
 
 #achievement-list img {
-	display: inline-block;
+	display: block;
 	width: 64px;
 }
 
 #upgrade-shop img {
-	display: inline-block;
+	display: block;
 	width: 64px;
 	cursor: pointer;
 }
 
 #building-shop img {
-	display: inline-block;
+	display: block;
 	width: 64px;
 	cursor: pointer;
 }
