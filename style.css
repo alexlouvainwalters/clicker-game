@@ -104,23 +104,19 @@ button {
 }
 
 #upgrade-list img {
-	display: block;
 	width: 64px;
 }
 
 #achievement-list img {
-	display: block;
 	width: 64px;
 }
 
 #upgrade-shop img {
-	display: block;
 	width: 64px;
 	cursor: pointer;
 }
 
 #building-shop img {
-	display: block;
 	width: 64px;
 	cursor: pointer;
 }
