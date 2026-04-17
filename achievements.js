@@ -216,7 +216,7 @@ function checkLockedAchievements() {
 		const achievement = achievements[id];
 
 		if (
-			!game.achievementsUnlocked[id] &&
+			!game.achievementsOwned[id] &&
 			achievement.condition()
 		) {
 			completeAchievement(id);

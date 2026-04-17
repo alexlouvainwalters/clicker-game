@@ -144,7 +144,7 @@ function updateAchievementsList() {
 			image.src = "assets/images/" + achievement.identifier + ".png";
 			image.onmouseenter = () => showTooltip(
 				achievement.name +
-				"<br>" + upgrade.description
+				"<br>" + achievement.description
 			);
 			image.onmouseleave = () => {
 				currentTooltip = null;
