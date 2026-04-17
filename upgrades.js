@@ -158,8 +158,8 @@ let upgrades = {
 		name: "Spiky Rolling Pin",
 		effectDescription: "Grammy CPS x3",
 		description: "Store out of sight from children.",
-		cost: 10_000_000,
-		currentCookiesRequirement: 1_000_000,
+		cost: 50_000_000,
+		currentCookiesRequirement: 5_000_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["grammy"] *= 3
@@ -191,8 +191,8 @@ let upgrades = {
 		name: "Stainless Steel Hose",
 		effectDescription: "Cookie Tree CPS x3",
 		description: "With a 1 day warranty included!",
-		cost: 1_000_000,
-		currentCookiesRequirement: 200_000,
+		cost: 5_000_000,
+		currentCookiesRequirement: 1_000_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["cookieTree"] *= 3
@@ -213,8 +213,8 @@ let upgrades = {
 		name: "Industry Drill",
 		effectDescription: "Doughstone CPS x10",
 		description: "Cookie density increases with depth.",
-		cost: 5_000_000,
-		currentCookiesRequirement: 1_000_000,
+		cost: 25_000_000,
+		currentCookiesRequirement: 10_000_000,
 		lifetimeCookiesRequirement: 0,
 		clicksRequirement: 0,
 		effect: () => game.buildingsStrength["doughstone"] *= 10
