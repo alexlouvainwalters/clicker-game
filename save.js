@@ -52,6 +52,7 @@ function resetGame() {
 	document.getElementById("building-shop").innerHTML = "";
 
 	updateCookieDisplay();
+	updateUpgradesList();
 	displayUpgradesInit();
 	displayBuildingsInit();
 	saveGame();
