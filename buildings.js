@@ -69,7 +69,7 @@ function createBuildingContainer(id) {
 	container.id = building.identifier;
 	container.classList.add("building-shop-item");
 
-	const numOwned = document.createElement("h1");
+	const numOwned = document.createElement("h2");
 	const owned = game.buildingsOwned[id];
 	numOwned.classList.add("building-shop-owned");
 	numOwned.textContent = formatNumber(owned);
@@ -97,7 +97,7 @@ function createBuildingContainer(id) {
 		hideTooltip();
 	};
 
-	const cost = document.createElement("h2");
+	const cost = document.createElement("p");
 	cost.classList.add("building-shop-cost");
 	cost.textContent = "Cost: " + formatNumber(getBuildingCost(id));
 	updateAffordabilityDisplay(cost, getBuildingCost(id));
