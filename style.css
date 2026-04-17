@@ -37,7 +37,7 @@ body {
 
 #screen-two {
 	outline: 3px solid #000066;
-	background-color: #333333;
+	background-color: #666666;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
