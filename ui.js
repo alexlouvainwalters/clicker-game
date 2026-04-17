@@ -86,6 +86,39 @@ function updateAffordabilityDisplay(element, cost) {
 	element.classList.add(affordable ? "affordable" : "unaffordable");
 }
 
+function updateUpgradesList() {
+	const container = document.getElementById("upgrade-list");
+	container.innerHTML("");
+
+	for (let id in upgrades) {
+		const upgrade = upgrades[id];
+
+		const image = document.createElement("img");
+
+		if (game.upgradesOwned[id]) {
+			image.src = "assets/images/" + upgrade.identifier + ".png";
+			image.onmouseenter = () => showTooltip(
+				upgrade.name +
+				"<br>" + upgrade.effectDescription +
+				"<br>\"" + upgrade.description + "\""
+			);
+			image.onmouseleave = () => {
+				currentTooltip = null;
+				hideTooltip();
+			};
+		} else {
+			image.src = "assets/images/locked.png";
+			image.onmouseenter = () => showTooltip("Locked");
+			image.onmouseleave = () => {
+				currentTooltip = null;
+				hideTooltip();
+			};
+		}
+
+		container.appendChild(image);
+	}
+}
+
 function showTooltip(text) {
 	updateTooltip(text);
 	tooltip.style.display = "block";

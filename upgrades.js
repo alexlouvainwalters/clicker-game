@@ -285,6 +285,8 @@ function buyUpgrade(id) {
 		for (let id in buildings) {
 			updateBuildingContainer(id);
 		}
+
+		updateUpgradesList();
 	}
 }
 

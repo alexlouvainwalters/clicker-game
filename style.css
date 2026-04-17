@@ -87,6 +87,14 @@ button {
 	border: none;
 }
 
+#upgrade-list img {
+	width: 128px;
+}
+
+#achievement-list img {
+	width: 128px;
+}
+
 #upgrade-shop img {
 	width: 128px;
 	cursor: pointer;
