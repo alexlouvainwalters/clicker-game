@@ -1,6 +1,7 @@
 loadGame();
 updateCookieDisplay();
 updateUpgradesList();
+updateAchievementsList();
 displayUpgradesInit();
 displayBuildingsInit();
 checkLockedUpgrades();
