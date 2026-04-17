@@ -217,7 +217,7 @@ function checkLockedAchievements() {
 
 		if (
 			!game.achievementsUnlocked[id] &&
-			achievement.condition();
+			achievement.condition()
 		) {
 			completeAchievement(id);
 		}
