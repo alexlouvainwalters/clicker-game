@@ -11,7 +11,7 @@
 
 	<body>
 		<div class="layout">
-			<div class="screen-half">
+			<div id="screen-one">
 				<h1>Cookie Clicker</h1>
 
 				<h2 id="cookie-display">0 cookies</h2>
@@ -21,7 +21,17 @@
 				<button onclick="resetGame()">Reset Game</button>
 			</div>
 
-			<div class="screen-half">
+			<div class="screen-two">
+				<h2>Upgrades:</h2>
+				<p>0 / 0 (0%)</p>
+				<div id="upgrade-list"></div>
+
+				<h2>Achievements:</h2>
+				<p>0 / 0 (0%)</p>
+				<div id="achievement-list"></div>
+			</div>
+
+			<div class="screen-three">
 				<h2>Upgrades</h2>
 				<div id="upgrade-shop"></div>
 
