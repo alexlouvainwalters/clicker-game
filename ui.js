@@ -88,7 +88,7 @@ function updateAffordabilityDisplay(element, cost) {
 
 function updateUpgradesList() {
 	const container = document.getElementById("upgrade-list");
-	container.innerHTML("");
+	container.innerHTML = "";
 
 	for (let id in upgrades) {
 		const upgrade = upgrades[id];
