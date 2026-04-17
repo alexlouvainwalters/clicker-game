@@ -90,8 +90,8 @@ function updateUpgradesList() {
 	const container = document.getElementById("upgrade-list");
 	container.innerHTML = "";
 
-	const owned = game.upgradesOwned.length;
-	const total = upgrades.length;
+	const owned = Object.keys(game.upgradesOwned).length;
+	const total = Object.keys(upgrades).length;
 	const percentage = (100 * owned / total).toFixed(1)
 
 	for (let id in upgrades) {
