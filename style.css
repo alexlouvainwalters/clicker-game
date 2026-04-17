@@ -88,20 +88,24 @@ button {
 }
 
 #upgrade-list img {
-	width: 128px;
+	display: block;
+	width: 64px;
 }
 
 #achievement-list img {
-	width: 128px;
+	display: block;
+	width: 64px;
 }
 
 #upgrade-shop img {
-	width: 128px;
+	display: block;
+	width: 64px;
 	cursor: pointer;
 }
 
 #building-shop img {
-	width: 128px;
+	display: block;
+	width: 64px;
 	cursor: pointer;
 }
 
