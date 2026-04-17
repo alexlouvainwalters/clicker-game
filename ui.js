@@ -90,6 +90,10 @@ function updateUpgradesList() {
 	const container = document.getElementById("upgrade-list");
 	container.innerHTML = "";
 
+	const owned = game.upgradesOwned.length;
+	const total = upgrades.length;
+	const percentage = (100 * owned / total).toFixed(1)
+
 	for (let id in upgrades) {
 		const upgrade = upgrades[id];
 
@@ -117,6 +121,9 @@ function updateUpgradesList() {
 
 		container.appendChild(image);
 	}
+
+	const progress = document.getElementById("upgrade-progress");
+	progress.textContent = owned + " / " + total + " (" + percentage + "%)";
 }
 
 function showTooltip(text) {
