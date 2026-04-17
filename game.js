@@ -9,5 +9,6 @@ let game = {
 	buildingsOwned: {},
 	buildingsStrength: {},
 	upgradesUnlocked: {},
-	upgradesOwned: {}
+	upgradesOwned: {},
+	achievementsOwned: {}
 };

@@ -31,6 +31,7 @@ function changeScore(quantity = 1) {
 
 	checkLockedUpgrades();
 	checkLockedBuildings();
+	checkLockedAchievements();
 	updateCookieDisplay();
 	refreshAffordability();
 	saveGame();
@@ -123,6 +124,45 @@ function updateUpgradesList() {
 	}
 
 	const progress = document.getElementById("upgrade-progress");
+	progress.textContent = owned + " / " + total + " (" + percentage + "%)";
+}
+
+function updateAchievementsList() {
+	const container = document.getElementById("achievement-list");
+	container.innerHTML = "";
+
+	const owned = Object.keys(game.achievementsOwned).length;
+	const total = Object.keys(achievements).length;
+	const percentage = (100 * owned / total).toFixed(1)
+
+	for (let id in achievements) {
+		const achievement = achievements[id];
+
+		const image = document.createElement("img");
+
+		if (game.achievementsOwned[id]) {
+			image.src = "assets/images/" + achievement.identifier + ".png";
+			image.onmouseenter = () => showTooltip(
+				achievement.name +
+				"<br>" + upgrade.description
+			);
+			image.onmouseleave = () => {
+				currentTooltip = null;
+				hideTooltip();
+			};
+		} else {
+			image.src = "assets/images/locked.png";
+			image.onmouseenter = () => showTooltip("Locked");
+			image.onmouseleave = () => {
+				currentTooltip = null;
+				hideTooltip();
+			};
+		}
+
+		container.appendChild(image);
+	}
+
+	const progress = document.getElementById("achievement-progress");
 	progress.textContent = owned + " / " + total + " (" + percentage + "%)";
 }
 

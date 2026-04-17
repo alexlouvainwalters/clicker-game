@@ -18,6 +18,7 @@ function loadGame() {
 		game.buildingsStrength = parsed.buildingsStrength ?? {};
 		game.upgradesUnlocked = parsed.upgradesUnlocked ?? {};
 		game.upgradesOwned = parsed.upgradesOwned ?? {};
+		game.achievementsOwned = parsed.achievementsOwned ?? {};
 	}
 
 	for (let id in buildings) {
@@ -40,7 +41,8 @@ function resetGame() {
 		buildingsOwned: {},
 		buildingsStrength: {},
 		upgradesUnlocked: {},
-		upgradesOwned: {}
+		upgradesOwned: {},
+		achievementsOwned: {}
 	};
 
 	for (let id in buildings) {
@@ -53,6 +55,7 @@ function resetGame() {
 
 	updateCookieDisplay();
 	updateUpgradesList();
+	updateAchievementsList();
 	displayUpgradesInit();
 	displayBuildingsInit();
 	saveGame();

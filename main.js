@@ -5,10 +5,12 @@ displayUpgradesInit();
 displayBuildingsInit();
 checkLockedUpgrades();
 checkLockedBuildings();
+checkLockedAchievements();
 
 setInterval(() => {
 	checkLockedUpgrades();
 	checkLockedBuildings();
+	checkLockedAchievements();
 	saveGame();
 }, 500);
 
