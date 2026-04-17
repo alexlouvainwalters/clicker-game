@@ -26,6 +26,7 @@ body {
 }
 
 #screen-one {
+	outline: 3px solid #000066;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -33,6 +34,7 @@ body {
 }
 
 #screen-two {
+	outline: 3px solid #000066;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -42,6 +44,7 @@ body {
 }
 
 #screen-three {
+	outline: 3px solid #000066;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
